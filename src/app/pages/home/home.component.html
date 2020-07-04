@@ -1,0 +1,12 @@
+<h1 class="text-center animated fadeIn fast">Bienvenido a PokemonAPP</h1>
+<hr class="mb-5">
+<app-loading *ngIf="pokemones.length===0"></app-loading>
+<div class="row animated fadeIn fast">
+    <div class="col">
+
+        <div class="card-columns">
+            <app-pokemon-card [pokemon]="pokemon" *ngFor="let pokemon of pokemones"></app-pokemon-card>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container mb-5 animated fadeIn" *ngIf="pokemon">
+    <div class="row">
+        <div class="col-sm-4 imagen-pokemon">
+            <img src="{{pokemon.img}}" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col-sm-8">
+            <h3 class="text-center texto-gradiente">
+                {{pokemon.name|uppercase}}
+                <i (click)="cambiarFavorito()" class="fas fa-star pointer texto-gradiente" *ngIf="esFavorito"></i>
+                <i (click)="cambiarFavorito()" class="far fa-star pointer texto-gradiente" *ngIf="!esFavorito"></i>
+            </h3>
+            <hr class="mb-3">
+            <p class="texto-gradiente texto-pokemon">{{pokemon.descripcion}}</p>
+            <p>
+                <span class="texto-gradiente texto-pokemon bold mr-2">Elementos:</span>
+                <span class="badge mr-1 {{type.tipo}} mb-2 texto-pokemon" *ngFor="let type of pokemon.types">{{type.tipo|tipo:'traduccion'}}</span>
+            </p>
+            <p>
+                <span class="texto-gradiente texto-pokemon bold mr-2">Peso:</span>
+                <span class="texto-gradiente texto-pokemon">{{pokemon.peso}} Kgs</span>
+            </p>
+            <p>
+                <span class="texto-gradiente texto-pokemon bold mr-2">Estatura:</span>
+                <span class="texto-gradiente texto-pokemon">{{pokemon.altura}} mts</span>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+<div class="container mb-5 animated fadeIn" *ngIf="pokemon">
+    <div class="row mt-5 imagen-pokemon">
+        <div class="col-sm-6">
+            <h4 class="texto-gradiente">Habilidades</h4>
+            <hr>
+            <p class="texto-gradiente texto-pokemon" *ngFor="let habilidad of pokemon.habilidades">
+                <span class="bold mr-2">{{habilidad.nombre || habilidad.nombre_alterno}}:</span> {{habilidad.descripcion|| habilidad.descripcion_alterna}}
+            </p>
+        </div>
+        <div class="col-sm-6 grafica">
+            <app-grafica *ngIf="pokemon" [data]="[{series: pokemon.stats, name: pokemon.name|uppercase}]"></app-grafica>
+        </div>
+    </div>
+</div>
+<div class="container mb-5 animated fadeIn" *ngIf="pokemon">
+    <div class="row mt-5">
+        <div class="col-sm-12 mb-3">
+            <h3 class="texto-gradiente">Evoluciones</h3>
+            <hr>
+        </div>
+        <div class="col-sm-4 mb-5" *ngFor="let evolucion of pokemon.evoluciones">
+            <app-evolucion (click)="verPokemon(evolucion)" [id]="evolucion"></app-evolucion>
+        </div>
+    </div>
+</div>

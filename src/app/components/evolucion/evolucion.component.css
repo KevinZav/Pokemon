@@ -1,0 +1,14 @@
+.evolucion {
+    /* width: 33%; */
+    border-radius: 50%;
+    background: linear-gradient(-225deg, #021b79 0%, #0575e6 54%, #ff3c56 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .7;
+}
+
+.evolucion:hover {
+    opacity: 1;
+    cursor: pointer;
+}

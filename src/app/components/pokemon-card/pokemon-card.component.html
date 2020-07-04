@@ -1,0 +1,11 @@
+<div class="card card-color animated fadeIn">
+    <img [src]="pokemon.img" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title text-center">{{pokemon.name |uppercase}}</h5>
+        <span class="card-text">
+      <h4><span class="badge bg-badge mr-1" *ngFor="let habilidad of pokemon.habilidades">{{habilidad.nombre}}</span></h4>
+        <h4><span class="badge mr-1 {{type.tipo}} mb-2" *ngFor="let type of pokemon.types">{{type.tipo|tipo:'traduccion'}}</span></h4>
+        </span>
+        <button (click)="verPokemon()" class='btn btn-block btn-grad'>Ver más</button>
+    </div>
+</div>

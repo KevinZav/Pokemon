@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+            <input type="text" #f (keyup.Enter)="buscar(f)" placeholder="Buscar pokemon" class="form-control texto-gradiente">
+        </div>
+    </div>
+</div>
+<div class="contenedor-busqueda p-3" *ngIf="busqueda.length > 0">
+    <div class="row w-100" *ngFor="let id of busqueda">
+        <div class="col">
+            <div class="pokemon-scroll overflow-scroll mb-3">
+                <app-evolucion (click)="agregar(id)" [id]="id.id"></app-evolucion>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-4">
+        <div class="cards-pokemon">
+            <div class="col-sm-12 mb-2  card bg-dark w-50" *ngFor="let pokemon of pokemones">
+                <img src="{{pokemon.img}}" class="img-fluid" alt="Responsive image">
+                <h4 class="text-center texto-gradiente">{{pokemon.name}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8 imagen-pokemon" *ngIf="data.length>0">
+        <app-grafica [data]="data"></app-grafica>
+    </div>
+</div>

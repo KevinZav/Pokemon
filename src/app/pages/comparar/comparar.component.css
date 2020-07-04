@@ -1,0 +1,43 @@
+.texto-gradiente {
+    /* background: linear-gradient(-225deg, #021b79 0%, #0575e6 54%, #ff3c56 100%); */
+    background-image: linear-gradient(-225deg, #f18888 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: tomato;
+}
+
+.texto-pokemon {
+    font-size: 1.2rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.pokemon-scroll {
+    width: 70px;
+}
+
+.contenedor-busqueda {
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 7px;
+}
+
+.imagen-pokemon {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.cards-pokemon {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}

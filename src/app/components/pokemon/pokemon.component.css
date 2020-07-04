@@ -1,0 +1,35 @@
+.texto-gradiente {
+    /* background: linear-gradient(-225deg, #021b79 0%, #0575e6 54%, #ff3c56 100%); */
+    background-image: linear-gradient(-225deg, #f18888 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: tomato;
+}
+
+.texto-pokemon {
+    font-size: 1.2rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.imagen-pokemon {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+@keyframes brillar {
+    from {
+        opacity: .7;
+    }
+    to {
+        opacity: 1;
+    }
+}
